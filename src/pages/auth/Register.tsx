@@ -1,4 +1,5 @@
-import signup from './signup.jpg';
+import login_image from '../../images/login_image.png'
+
 
 export default function Register() {
     return(
@@ -30,7 +31,7 @@ export default function Register() {
                             </div>
 
                             <div className="max-w-full h-auto">
-                            <figure><img src={signup}/></figure>
+                            <figure><img src={login_image}/></figure>
                             </div>
                         </div>
                     </div>
