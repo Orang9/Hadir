@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import login_image from "../../assets/login_image.png"
 
 export default function Login() {
-    let navigate = useNavigate
+    let navigate = useNavigate()
   return (
     <>
       <body className="h-screen text-base leading-8 text-gray-700 font-normal">
