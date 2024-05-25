@@ -1,17 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import {
   faBoxArchive,
   faChartSimple,
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export default function Sidebar() {
   let navigate = useNavigate();
 
+  const [isCourseDropdownOpen, setIsCourseDropdownOpen] = useState(false);
+
+  const toggleCourseDropdown = () => {
+    setIsCourseDropdownOpen(!isCourseDropdownOpen);
+  };
+
   const box = <FontAwesomeIcon icon={faBoxArchive} />;
-  const calender = <FontAwesomeIcon icon={faCalendarDays} />;
   const graph = <FontAwesomeIcon icon={faChartSimple} />;
   const gear = <FontAwesomeIcon icon={faGear} />;
 
@@ -33,7 +38,7 @@ export default function Sidebar() {
               alt="Flowbite Logo"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              HADIR
+              [ KnowledgeHub ]
             </span>
           </button>
           <ul className="space-y-2 font-medium">
@@ -54,19 +59,77 @@ export default function Sidebar() {
               </button>
             </li>
             <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              <button
+                onClick={toggleCourseDropdown}
+                className="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                   fill="currentColor"
                   viewBox="0 0 20 18"
                 >
                   {box}
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Course</span>
-              </a>
+                <span className="ms-3 whitespace-nowrap">Course</span>
+                <svg
+                  className="w-4 h-4 ms-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              {isCourseDropdownOpen && (
+                <ul className="space-y-2 ps-5">
+                  <li>
+                    <button
+                      onClick={() => navigate("/course/module")}
+                      className="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                    >
+                      <span className="ms-3 whitespace-nowrap">
+                        Sub modul 1.1
+                      </span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => navigate("/course/module")}
+                      className="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                    >
+                      <span className="ms-3 whitespace-nowrap">
+                        Sub modul 1.2
+                      </span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => navigate("/course/module")}
+                      className="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                    >
+                      <span className="ms-3 whitespace-nowrap">
+                        Sub modul 1.3
+                      </span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => navigate("/course/module")}
+                      className="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                    >
+                      <span className="ms-3 whitespace-nowrap">
+                        Sub modul 1.4
+                      </span>
+                    </button>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <a
@@ -83,21 +146,6 @@ export default function Sidebar() {
                 <span className="flex-1 ms-3 whitespace-nowrap">
                   Knowledge Sharing
                 </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  {calender}
-                </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Schedule</span>
               </a>
             </li>
             <li>

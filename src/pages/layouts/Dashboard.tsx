@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import poster from "../../assets/poster_dashboard.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,11 +9,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+
   const filePen = (
     <FontAwesomeIcon icon={faFilePen} className="text-white h-10" />
   );
   const angleRight = <FontAwesomeIcon icon={faAngleRight} />;
   const angleLeft = <FontAwesomeIcon icon={faAngleLeft} />;
+
+  const percentage = 75;
+
+  const radius = 50;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (percentage / 100) * circumference;
+
   return (
     <>
       <Sidebar />
@@ -41,7 +51,7 @@ export default function Dashboard() {
         <div className="w-full grid grid-cols-3 ml-4">
           <div className="col-span-2">
             <div className="grid mb-8 mt-8 md:mb-12 md:grid-cols-2 ">
-              <figure className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
@@ -49,8 +59,8 @@ export default function Dashboard() {
                     <div className="text-sm text-white">OXF/ENG/01</div>
                   </div>
                 </figcaption>
-              </figure>
-              <figure className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              </button>
+              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
@@ -58,8 +68,8 @@ export default function Dashboard() {
                     <div className="text-sm text-white">OXF/ENG/03</div>
                   </div>
                 </figcaption>
-              </figure>
-              <figure className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              </button>
+              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
@@ -67,8 +77,8 @@ export default function Dashboard() {
                     <div className="text-sm text-white">OXF/ENG/02</div>
                   </div>
                 </figcaption>
-              </figure>
-              <figure className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              </button>
+              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
@@ -76,12 +86,19 @@ export default function Dashboard() {
                     <div className="text-sm text-white">OXF/ENG/04</div>
                   </div>
                 </figcaption>
-              </figure>
+              </button>
             </div>
           </div>
           <div className="flex items-center justify-center border-l-2 border-b-2">
             <div className="bg-white w-[40vh] h-[45vh] rounded-xl p-6">
               <h2 className="font-medium mb-2">To Do List</h2>
+              <div className="flex border-b-2">
+                <input type="checkbox" className="mr-7 w-4" />
+                <div className="flex-col">
+                  <h2 className="">Sub module 1.4</h2>
+                  <h3 className="text-gray-400">Tuesday, 29 June 2021</h3>
+                </div>
+              </div>
               <div className="flex border-b-2">
                 <input type="checkbox" className="mr-7 w-4" />
                 <div className="flex-col">
@@ -156,8 +173,37 @@ export default function Dashboard() {
                 </ul>
               </div>
               <div className="bg-[#E4E4E4] w-[30vh] h-[30vh] mr-6 mt-3 flex flex-col justify-center items-center">
-                <div className="bg-white rounded-full w-[15vh] h-[15vh] flex justify-center items-center mb-2">
-                  75 %
+                <div className="relative flex justify-center items-center">
+                  <svg
+                    className="absolute"
+                    width="15vh"
+                    height="15vh"
+                    viewBox="0 0 120 120"
+                  >
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r={radius}
+                      stroke="#E4E4E4"
+                      strokeWidth="10"
+                      fill="none"
+                    />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r={radius}
+                      stroke="#34A1FC"
+                      strokeWidth="10"
+                      fill="none"
+                      strokeDasharray={circumference}
+                      strokeDashoffset={offset}
+                      strokeLinecap="round"
+                      className="transition-stroke duration-300 ease-in-out"
+                    />
+                  </svg>
+                  <div className="bg-white rounded-full w-[12vh] h-[12vh] flex justify-center items-center mb-2">
+                    {percentage} %
+                  </div>
                 </div>
                 <h2>Weekly Progress</h2>
               </div>
@@ -165,11 +211,14 @@ export default function Dashboard() {
           </div>
           <div className="p-4">
             <div className="flex flex-col justify-center items-center">
-              <div className="bg-[#E4E4E4] w-[45vh] h-[15vh] rounded-xl p-4">
+              <button
+                onClick={() => navigate("/schedule")}
+                className="bg-[#E4E4E4] w-[45vh] h-[15vh] rounded-xl p-4"
+              >
                 <div className="flex justify-between">
-                  {angleLeft}
+                  <button>{angleLeft}</button>
                   <h2>Maret 2021</h2>
-                  {angleRight}
+                  <button>{angleRight}</button>
                 </div>
                 <div className="flex justify-around">
                   <span className="w-[2vh]">M</span>
@@ -181,34 +230,38 @@ export default function Dashboard() {
                   <span className="w-[2vh]">S</span>
                 </div>
                 <div className="flex justify-around">
-                  <span className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
+                  <button className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
                     24
-                  </span>
-                  <span className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
+                  </button>
+                  <button className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
                     25
-                  </span>
-                  <span className="bg-blue-500 text-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
+                  </button>
+                  <button className="bg-blue-500 text-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
                     26
-                  </span>
-                  <span className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
+                  </button>
+                  <button className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
                     27
-                  </span>
-                  <span className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
+                  </button>
+                  <button className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
                     28
-                  </span>
-                  <span className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
+                  </button>
+                  <button className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
                     29
-                  </span>
-                  <span className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
+                  </button>
+                  <button className="bg-white rounded-full w-[4vh] h-[4vh] flex justify-center items-center">
                     30
-                  </span>
+                  </button>
                 </div>
-              </div>
+              </button>
             </div>
             <div className="mt-2">Upcoming Class</div>
             <div className="flex justify-around mt-2">
-              <div className="flex justify-center items-center w-[12vh] h-[8vh] rounded-xl border-gray-400 border-2">13/04</div>
-              <div className="flex justify-center items-center">Pertemuan 1</div>
+              <div className="flex justify-center items-center w-[12vh] h-[8vh] rounded-xl border-gray-400 border-2">
+                13/04
+              </div>
+              <div className="flex justify-center items-center">
+                Pertemuan 1
+              </div>
             </div>
           </div>
         </div>
