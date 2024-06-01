@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
-import poster from "../../assets/poster_dashboard.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
@@ -44,14 +43,47 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="w-full h-[25vh] mt-4 relative overflow-hidden">
-          <img src={poster} alt="Poster" className="absolute object-cover" />
+
+        <div className="flex p-10 border-b-2">
+          <div className="block max-w-sm m-2 p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Company
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
+              commodi libero beatae quibusdam officia qui nemo esse. Sint nihil,
+              nesciunt quasi perferendis cumque deserunt doloremque. Repellat
+              rerum nulla nihil pariatur?
+            </p>
+          </div>
+          <div className="block max-w-sm m-2 p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Division
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              tempore assumenda labore. Totam iure cupiditate quas praesentium
+              quos fugiat tenetur tempora, aliquam modi debitis est adipisci
+              vero culpa accusantium alias?
+            </p>
+          </div>
+          <div className="block max-w-sm m-2 p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Job Description
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              veritatis voluptatem maiores hic cum? Libero tempora dolore esse,
+              repudiandae sequi, blanditiis excepturi ratione inventore officia
+              enim reprehenderit hic necessitatibus numquam.
+            </p>
+          </div>
         </div>
 
         <div className="w-full grid grid-cols-3 ml-4">
-          <div className="col-span-2">
+          <div className="col-span-2 flex justify-center items-center">
             <div className="grid mb-8 mt-8 md:mb-12 md:grid-cols-2 ">
-              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              <button className="p-8 px-[12vh]  m-2 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
@@ -60,7 +92,7 @@ export default function Dashboard() {
                   </div>
                 </figcaption>
               </button>
-              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              <button className="p-8 px-[12vh] m-2 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
@@ -69,7 +101,7 @@ export default function Dashboard() {
                   </div>
                 </figcaption>
               </button>
-              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              <button className="p-8 px-[12vh] m-2 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
@@ -78,7 +110,7 @@ export default function Dashboard() {
                   </div>
                 </figcaption>
               </button>
-              <button className="p-8 m-4 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+              <button className="p-8 px-[12vh] m-2 bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
