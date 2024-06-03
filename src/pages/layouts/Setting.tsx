@@ -79,6 +79,7 @@ export default function Setting() {
                 </p>
               </div>
               <div>
+                <h2>Email:</h2>
                 <input
                   type="email"
                   name="email"
@@ -94,6 +95,7 @@ export default function Setting() {
                 </p>
               </div>
               <div>
+                <h2>Phone:</h2>
                 <input
                   type="text"
                   name="phone"
@@ -187,11 +189,11 @@ export default function Setting() {
           <div>
             <h2 className="text-xl font-bold">My Email Address</h2>
             <div className="flex items-center">
-                {emailIcon}
-                <div className="pl-8">
-                    <h2 className="text-lg">budisanjaya03@gmail.com</h2>
-                    <h3 className="text-gray-400">1 month ago</h3>
-                </div>
+              {emailIcon}
+              <div className="pl-8">
+                <h2 className="text-lg">budisanjaya03@gmail.com</h2>
+                <h3 className="text-gray-400">1 month ago</h3>
+              </div>
             </div>
           </div>
         </div>

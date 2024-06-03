@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import login_image from "../../assets/login_image.png"
 
 export default function Login() {
@@ -65,6 +65,8 @@ export default function Login() {
                         value="Login"
                         onClick={() => navigate("/dashboard")}
                       />
+
+                      {/* <Link to={"/dashboard"}></Link> */}
                     </div>
                   </form>
                 </div>
