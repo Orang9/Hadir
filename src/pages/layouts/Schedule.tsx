@@ -46,19 +46,19 @@ export default function Schedule() {
               </li>
               <li className="bg-white mt-2 pt-2 pb-2 pl-4 pr-[20vh]  w-full flex justify-between items-center  ">
               <input type="checkbox" className="w-6 h-8 mr-0" />
-              <h2>Pertemuan 1</h2>
+              <h2>Pertemuan 2</h2>
               <h2>Sales Marketing</h2>
               <h2>Zoom</h2>
               </li>
               <li className="bg-white mt-2 pt-2 pb-2 pl-4 pr-[20vh]  w-full flex justify-between items-center  ">
               <input type="checkbox" className="w-6 h-8 mr-0" />
-              <h2>Pertemuan 1</h2>
+              <h2>Pertemuan 3</h2>
               <h2>Sales Marketing</h2>
               <h2>Zoom</h2>
               </li>
               <li className="bg-white mt-2 pt-2 pb-2 pl-4 pr-[20vh]  w-full flex justify-between items-center  ">
               <input type="checkbox" className="w-6 h-8 mr-0" />
-              <h2>Pertemuan 1</h2>
+              <h2>Pertemuan 4</h2>
               <h2>Sales Marketing</h2>
               <h2>Zoom</h2>
               </li>

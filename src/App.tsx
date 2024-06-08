@@ -6,6 +6,7 @@ import Schedule from "./pages/layouts/Schedule";
 import Grade from "./pages/layouts/Grade";
 import Setting from "./pages/layouts/Setting";
 import Sharing from "./pages/layouts/Sharing";
+import SubModule from "./pages/layouts/SubModul";
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/schedule" element={<Schedule />} />
-          {/* <Route path="/course">
-            <Route path=":" element={<Dashboard />} />
-          </Route> */}
+          <Route path="/course">
+            <Route path="module" element={<SubModule />} />
+          </Route>
           <Route path="/grade" element={<Grade />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="/sharing" element={<Sharing />} />
