@@ -1,5 +1,4 @@
 import Sidebar from "../../components/Sidebar";
-import poster from "../../assets/poster_dashboard.jpg";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -28,10 +27,6 @@ export default function Setting() {
             <button className="bg-[#34A1FC] w-20 h-10 rounded-xl">
               <h2 className="text-white">Edit</h2>
             </button>
-          </div>
-
-          <div className="w-full h-[25vh] mt-4 mb-10 relative overflow-hidden rounded-xl">
-            <img src={poster} alt="Poster" className="absolute object-cover" />
           </div>
 
           <form
