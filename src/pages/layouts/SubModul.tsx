@@ -25,18 +25,17 @@ export default function SubModule() {
           </div>
 
           <div className="flex items-center justify-center gap-4">
-            <button className="p-4 px-[12vh] bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
+            <button className="p-4 px-[6vh] bg-[#34A1FC] rounded-xl md:rounded-ss-lg md:border-e">
               <figcaption className="flex items-center justify-center ">
                 {filePen}
                 <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
-                  <div>Sub module 1.1</div>
-                  <div className="text-sm text-white">OXF/ENG/01</div>
+                  <div>Communication & Networking Skills</div>
                 </div>
               </figcaption>
             </button>
 
             <div className="bg-[#23265d] w-[12vh] h-[12vh] rounded-full flex items-center justify-center text-[#dedef0]">
-              xx%
+              90%
             </div>
           </div>
         </div>

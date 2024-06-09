@@ -11,7 +11,7 @@ export default function Setting() {
     <>
       <Sidebar />
 
-      <div className="w-screen h-full bg-[#F5F5F5] ">
+      <div className="w-full h-full bg-[#F5F5F5] ">
         <div className="p-4 sm:ml-64 ">
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -52,6 +52,26 @@ export default function Setting() {
             />
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-14">
+            <div>
+                <h2>Join Date:</h2>
+                <input
+                  type="text"
+                  name="joinDate"
+                  required
+                  className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
+                  placeholder="Your Nick name"
+                />
+              </div>
+              <div>
+                <h2>Supervisor's Name:</h2>
+                <input
+                  type="text"
+                  name="supervisor'sName"
+                  required
+                  className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
+                  placeholder="Your Nick name"
+                />
+              </div>
               <div>
                 <h2>Full Name:</h2>
                 <input
@@ -76,6 +96,19 @@ export default function Setting() {
                 />
                 <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
                   Please provide your nick name.
+                </p>
+              </div>
+              <div>
+                <h2>NIK:</h2>
+                <input
+                  type="text"
+                  name="nik"
+                  required
+                  className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
+                  placeholder="Your Nick name"
+                />
+                <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
+                  Please provide your NIK.
                 </p>
               </div>
               <div>
@@ -108,36 +141,6 @@ export default function Setting() {
                 </p>
               </div>
               <div>
-                <h2>Gender:</h2>
-                <select
-                  name="gender"
-                  required
-                  className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
-                >
-                  <option value="" disabled selected>
-                    Select your gender
-                  </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-                <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
-                  Please select your gender.
-                </p>
-              </div>
-              <div>
-                <h2>Country:</h2>
-                <input
-                  type="text"
-                  name="country"
-                  required
-                  className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
-                  placeholder="Your Nick name"
-                />
-                <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
-                  Please provide your country.
-                </p>
-              </div>
-              <div>
                 <h2>Language:</h2>
                 <select
                   name="language"
@@ -147,6 +150,7 @@ export default function Setting() {
                   <option value="" disabled selected>
                     Select your language
                   </option>
+                  <option value="indonesia">Indonesia</option>
                   <option value="english">English</option>
                   <option value="spanish">Spanish</option>
                   <option value="french">French</option>
@@ -155,19 +159,6 @@ export default function Setting() {
                 </select>
                 <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
                   Please select your language.
-                </p>
-              </div>
-              <div>
-                <h2>Tme Zone:</h2>
-                <input
-                  type="text"
-                  name="timeZone"
-                  required
-                  className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
-                  placeholder="Your Nick name"
-                />
-                <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
-                  Please provide your time zone.
                 </p>
               </div>
 

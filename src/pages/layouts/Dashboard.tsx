@@ -25,6 +25,7 @@ export default function Dashboard() {
   return (
     <>
       <Sidebar />
+      
       <div className="p-4 sm:ml-64 bg-[#F5F5F5]">
         <div className="flex justify-between">
           <div>
@@ -87,8 +88,7 @@ export default function Dashboard() {
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
-                    <div>Sub module 1.1</div>
-                    <div className="text-sm text-white">OXF/ENG/01</div>
+                    <div>Communication & Networking Skills</div>
                   </div>
                 </figcaption>
               </button>
@@ -96,8 +96,7 @@ export default function Dashboard() {
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
-                    <div>Sub module 1.3</div>
-                    <div className="text-sm text-white">OXF/ENG/03</div>
+                    <div>Pitching Skills</div>
                   </div>
                 </figcaption>
               </button>
@@ -105,8 +104,7 @@ export default function Dashboard() {
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
-                    <div>Sub module 1.2</div>
-                    <div className="text-sm text-white">OXF/ENG/02</div>
+                    <div>Presentation Skills</div>
                   </div>
                 </figcaption>
               </button>
@@ -114,8 +112,7 @@ export default function Dashboard() {
                 <figcaption className="flex items-center justify-center ">
                   {filePen}
                   <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
-                    <div>Sub module 1.4</div>
-                    <div className="text-sm text-white">OXF/ENG/04</div>
+                    <div>Negotation Skills</div>
                   </div>
                 </figcaption>
               </button>
