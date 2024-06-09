@@ -10,7 +10,7 @@ export default function Setting() {
     <>
       <Sidebar />
 
-      <div className="w-full h-full bg-[#F5F5F5] ">
+      <div className="w-full h-screen bg-[#F5F5F5] ">
         <div className="p-4 sm:ml-64 ">
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -54,7 +54,7 @@ export default function Setting() {
                   name="joinDate"
                   required
                   className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
-                  placeholder="Your Nick name"
+                  placeholder="Your Join Date"
                 />
               </div>
               <div>
@@ -64,7 +64,7 @@ export default function Setting() {
                   name="supervisor'sName"
                   required
                   className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
-                  placeholder="Your Nick name"
+                  placeholder="Your Supervisor's Name"
                 />
               </div>
               <div>
@@ -100,7 +100,7 @@ export default function Setting() {
                   name="nik"
                   required
                   className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
-                  placeholder="Your Nick name"
+                  placeholder="Your NIK"
                 />
                 <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
                   Please provide your NIK.
