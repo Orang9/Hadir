@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Sidebar from "../../components/Sidebar";
 import { faFilePen } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
 
 export default function SubModule() {
   const filePen = (
     <FontAwesomeIcon icon={faFilePen} className="text-white h-10" />
   );
+
+  const { courseId } = useParams();
   return (
     <>
       <Sidebar />
@@ -29,7 +32,7 @@ export default function SubModule() {
               <figcaption className="flex items-center justify-center ">
                 {filePen}
                 <div className="space-y-0.5 text-white text-left rtl:text-right ms-3">
-                  <div>Communication & Networking Skills</div>
+                  <div>{courseId}</div>
                 </div>
               </figcaption>
             </button>

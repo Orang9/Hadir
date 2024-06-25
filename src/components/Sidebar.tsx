@@ -10,6 +10,10 @@ import { useState } from "react";
 export default function Sidebar() {
   let navigate = useNavigate();
 
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
   const [isCourseDropdownOpen, setIsCourseDropdownOpen] = useState(false);
 
   const toggleCourseDropdown = () => {
@@ -30,7 +34,7 @@ export default function Sidebar() {
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-800">
           <button
             className="flex items-center ps-2.5 mb-5"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => handleNavigation("/dashboard")}
           >
             <img
               src="https://flowbite.com/docs/images/logo.svg"
@@ -45,7 +49,7 @@ export default function Sidebar() {
             <div>
               <li>
                 <button
-                  onClick={() => navigate("/dashboard")}
+                  onClick={() => handleNavigation("/dashboard")}
                   className="flex items-center w-full p-2 rounded-lg text-white hover:bg-gray-700 group"
                 >
                   <svg
@@ -91,17 +95,18 @@ export default function Sidebar() {
                   <ul className="space-y-2 ps-5">
                     <li>
                       <button
-                        onClick={() => navigate("/course/module")}
+                        onClick={() => handleNavigation("/course/Communication & Networking Skills")}
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">
-                          Communication & Netw
+                          <div>Communication &</div>
+                          <div>Networking Skills</div>
                         </span>
                       </button>
                     </li>
                     <li>
                       <button
-                        onClick={() => navigate("/course/module")}
+                        onClick={() => handleNavigation("/course/Presentation Skills")}
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">
@@ -111,7 +116,7 @@ export default function Sidebar() {
                     </li>
                     <li>
                       <button
-                        onClick={() => navigate("/course/module")}
+                        onClick={() => handleNavigation("/course/Pitching Skills")}
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">
@@ -121,7 +126,7 @@ export default function Sidebar() {
                     </li>
                     <li>
                       <button
-                        onClick={() => navigate("/course/module")}
+                        onClick={() => handleNavigation("/course/Negotation Skills")}
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">
@@ -134,7 +139,7 @@ export default function Sidebar() {
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/sharing")}
+                  onClick={() => handleNavigation("/sharing")}
                   className="flex items-center w-full p-2 rounded-lg text-white hover:bg-gray-700 group"
                 >
                   <svg
@@ -151,7 +156,7 @@ export default function Sidebar() {
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/grade")}
+                  onClick={() => handleNavigation("/grade")}
                   className="flex items-center w-full p-2 rounded-lg text-white hover:bg-gray-700 group"
                 >
                   <svg
@@ -169,7 +174,7 @@ export default function Sidebar() {
             <div>
               <li>
                 <button
-                  onClick={() => navigate("/setting")}
+                  onClick={() => handleNavigation("/setting")}
                   className="flex items-center w-full p-2 rounded-lg text-white hover:bg-gray-700 group"
                 >
                   <svg
@@ -184,7 +189,7 @@ export default function Sidebar() {
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/")}
+                  onClick={() => handleNavigation("/")}
                   className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                 >
                   <svg

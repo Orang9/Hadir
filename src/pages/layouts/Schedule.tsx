@@ -12,9 +12,6 @@ export default function Schedule() {
           <div className="flex justify-between">
             <div>
               <h1 className="font-bold text-3xl">Schedule</h1>
-              <h2 className="text-gray-400">
-                Perhatikan jadwal kamu jangan sampe ada yang terlewat!
-              </h2>
             </div>
             <div className="flex items-center">
               <img

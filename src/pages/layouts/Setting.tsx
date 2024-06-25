@@ -81,19 +81,6 @@ export default function Setting() {
                 </p>
               </div>
               <div>
-                <h2>Nick Name:</h2>
-                <input
-                  type="text"
-                  name="nickName"
-                  required
-                  className="peer border-2 border-muted-medium py-4 px-4 rounded-xl placeholder:text-default focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full [.validated_&]:invalid:border-pink-600 [.validated_&]:invalid:ring-2 [.validated_&]:invalid:ring-pink-200"
-                  placeholder="Your Nick name"
-                />
-                <p className="mt-2 hidden [.validated_&]:peer-invalid:block text-pink-600 text-sm">
-                  Please provide your nick name.
-                </p>
-              </div>
-              <div>
                 <h2>NIK:</h2>
                 <input
                   type="text"

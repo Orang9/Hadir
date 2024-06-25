@@ -1,63 +1,14 @@
 import Sidebar from "../../components/Sidebar";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
 import { useState } from "react";
 import GradeModal from "../../components/GradeModal";
 import NoteModal from "../../components/NoteModal";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top" as const,
-    },
-    title: {
-      display: true,
-      text: "Grade",
-    },
-  },
-};
-
-const labels = ["Module 1", "Module 2", "Module 3", "Module 4", "Projects"];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Communication & Networking Skills",
-      data: labels.map(() => faker.datatype.number({ min: 80, max: 100 })),
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
-  ],
-};
+import GradeGraph from "../../components/GradeGraph";
 
 const grades = [
-  { name: "Moriarty", grade: 100 },
-  { name: "Elsa", grade: 95 },
-  { name: "Budi", grade: 85 },
-  { name: "Smith", grade: 83 },
-  { name: "Cid", grade: 80 }
+  { name: "Budi", grade: 100 },
+  { name: "Jamal", grade: 95 },
+  { name: "Rudi", grade: 85 },
+  { name: "Asep", grade: 83 }
 ];
 
 export default function Grade() {
@@ -88,9 +39,6 @@ export default function Grade() {
           <div className="flex justify-between">
             <div>
               <h1 className="font-bold text-3xl">Grades</h1>
-              <h2 className="text-gray-400">
-                Setiap Usaha yang Dilakukan akan Menghasilkan Nilai yang Baik
-              </h2>
             </div>
             <div className="flex items-center">
               <img
@@ -105,46 +53,56 @@ export default function Grade() {
             </div>
           </div>
 
-          <Line options={options} data={data} />
+          <div className="flex justify-center items-center">
+            <GradeGraph label="Budi" dataValues={[75, 70, 85, 67]} />
+            <GradeGraph label="Jamal" dataValues={[80, 65, 75, 70]} />
+            <GradeGraph label="Rudi" dataValues={[60, 75, 80, 90]} />
+            <GradeGraph label="Asep" dataValues={[90, 80, 69, 81]} />
+          </div>
 
-          <div className="w-full h-[25vh] mt-4 flex justify-center items-center ">
+          <div className="w-full h-[25vh] flex justify-center items-center ">
             <div className="text-3xl">
               <div>
                 Division: <span className="font-bold">Sales Marketing</span>
-              </div>
-              <div>
-                Module:{" "}
-                <span className="font-bold">
-                  Communication & Networking Skills
-                </span>
               </div>
               <div>
                 Mengulang: <span className="font-bold">0</span>
               </div>
             </div>
           </div>
-          <div className="bg-[#D9D9D9] w-full h-[20vh] mt-4 flex justify-center items-center rounded-xl ">
+          <div className="bg-[#D9D9D9] w-full h-[20vh] flex justify-center items-center rounded-xl ">
             <div className="text-2xl">
               <div>
-                Grade: <span className="font-bold">85.00</span>
+                Average Grade: <span className="font-bold">85.00</span>
               </div>
               <div>
-                Completion: <span className="font-bold">26/04/2005</span>
+                Completion: <span className="font-bold">26/04/2025</span>
               </div>
               <div>
                 Status: <span className="font-bold">Passed</span>
               </div>
             </div>
           </div>
-          <div className=" w-full h-[10vh] mt-4 flex justify-between border-y-4 border-gray-400">
-          <button onClick={handlePreviousClick} className="text-blue-700">Note</button>
-          <button onClick={handleNextClick} className="text-blue-700">Grade Division</button>
+          <div className=" w-full h-[10vh] mt-2 flex justify-between border-t-4 border-gray-400">
+            <button onClick={handlePreviousClick} className="text-blue-700">
+              Note
+            </button>
+            <button onClick={handleNextClick} className="text-blue-700">
+              Grade Division
+            </button>
           </div>
         </div>
       </div>
 
-      <GradeModal isOpen={isNextModalOpen} onClose={handleCloseNextModal} grades={grades} />
-      <NoteModal isOpen={isPreviousModalOpen} onClose={handleClosePreviousModal} />
+      <GradeModal
+        isOpen={isNextModalOpen}
+        onClose={handleCloseNextModal}
+        grades={grades}
+      />
+      <NoteModal
+        isOpen={isPreviousModalOpen}
+        onClose={handleClosePreviousModal}
+      />
     </>
   );
 }
