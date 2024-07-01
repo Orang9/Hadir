@@ -13,7 +13,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<Errors>({});
 
-  const validateForm = (): Errors  => {
+  const validateForm = (): Errors => {
     let formErrors: Errors = {};
     if (!nik) formErrors.nik = "NIK is required";
     if (isNaN(Number(nik))) formErrors.nik = "NIK must be a number";
@@ -33,79 +33,78 @@ export default function Login() {
 
   return (
     <>
-      <body className="h-screen text-base leading-8 text-gray-700 font-normal">
-        <div className=" py-32">
-          <section className="">
-            <div className="w-max bg-[#EEF4FA] mx-auto shadow rounded-3xl">
-              <div className="flex p-5">
-                <div className="w-96 h-auto self-center">
-                  <img src={login_image} alt="Login Image" />
-                </div>
-
-                <div className="w-1/2 overflow-hidden ml-20 mr-36">
-                  <h2 className="text-3xl font-bold">Login now</h2>
-                  <h2 className="mb-8">Hi, Welcome back👋</h2>
-                  <form method="POST" className="w-full" id="login-form" onSubmit={handleSubmit}>
-                    <div className="relative mb-6 border-b-4 last:mb-0">
-                      <label htmlFor="your_nik"></label>
-                      <input
-                        type="text"
-                        name="your_nik"
-                        id="your_nik"
-                        placeholder="Your NIK"
-                        className="focus:outline-none bg-transparent"
-                        value={nik}
-                        onChange={(e) => setNik(e.target.value)}
-                      />
-                      {errors.nik && <div className="text-red-500">{errors.nik}</div>}
-                    </div>
-                    <div className="relative mb-6 border-b-4 last:mb-0">
-                      <label htmlFor="your_password"></label>
-                      <input
-                        type="password"
-                        name="your_password"
-                        id="your_password"
-                        placeholder="Your Password"
-                        className="focus:outline-none bg-transparent"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
-                      {errors.password && <div className="text-red-500">{errors.password}</div>}
-                    </div>
-                    <div className="relative mb-6 flex justify-between last:mb-0">
-                      <div className="text-left">
-                        <input
-                          type="checkbox"
-                          name="remember_me"
-                          id="remember_me"
-                        />
-                        <label htmlFor="remember_me">Remember me</label>
-                      </div>
-                      <div className="text-right">
-                        <Link
-                          to="#"
-                          className="text-blue-500 hover:text-[#474BCA]"
-                        >
-                          Forgot Password?
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative mb-6 last:mb-0 text-center">
-                      <input
-                        type="submit"
-                        name="signin"
-                        id="signin"
-                        className="inline-block bg-[#474BCA] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-6 w-full"
-                        value="Login"
-                      />
-                    </div>
-                  </form>
-                </div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 py-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full bg-white shadow-md rounded-lg p-8">
+          <div className="flex justify-center">
+            <img
+              src={login_image}
+              alt="Login Image"
+              className="h-24 w-24 mb-4"
+            />
+          </div>
+          <h2 className="text-3xl font-bold text-center">Login Now</h2>
+          <p className="text-center mb-8">Hi, Welcome back 👋</p>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="your_nik" className="block text-gray-700">
+                Your NIK
+              </label>
+              <input
+                type="text"
+                id="your_nik"
+                name="your_nik"
+                placeholder="Your NIK"
+                className="block w-full px-3 py-2 mt-1 focus:outline-none border-b-2 border-gray-300"
+                value={nik}
+                onChange={(e) => setNik(e.target.value)}
+              />
+              {errors.nik && <p className="text-red-500 mt-1">{errors.nik}</p>}
+            </div>
+            <div className="mb-4">
+              <label htmlFor="your_password" className="block text-gray-700">
+                Your Password
+              </label>
+              <input
+                type="password"
+                id="your_password"
+                name="your_password"
+                placeholder="Your Password"
+                className="block w-full px-3 py-2 mt-1 focus:outline-none border-b-2 border-gray-300"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {errors.password && (
+                <p className="text-red-500 mt-1">{errors.password}</p>
+              )}
+            </div>
+            <div className="flex justify-between items-center mb-4">
+              <div className="text-left">
+                <input
+                  type="checkbox"
+                  id="remember_me"
+                  name="remember_me"
+                  className="mr-1"
+                />
+                <label htmlFor="remember_me" className="text-gray-700">
+                  Remember me
+                </label>
+              </div>
+              <div className="text-right">
+                <Link to="#" className="text-blue-500 hover:text-blue-700">
+                  Forgot Password?
+                </Link>
               </div>
             </div>
-          </section>
+            <div className="mb-4">
+              <input
+                type="submit"
+                className="block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                value="Login"
+              />
+            </div>
+          </form>
         </div>
-      </body>
+      </div>
     </>
   );
 }
