@@ -9,7 +9,7 @@ import SubModule from "../pages/layouts/SubModul";
 
 export default function Layout() {
   return (
-    <div>
+    <div className="w-full h-screen bg-[#F5F5F5]" >
       <Sidebar />
       <div>
         <Routes>

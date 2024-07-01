@@ -5,7 +5,7 @@ import {
   faChartSimple,
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Sidebar() {
   let navigate = useNavigate();
@@ -15,10 +15,29 @@ export default function Sidebar() {
   };
 
   const [isCourseDropdownOpen, setIsCourseDropdownOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   const toggleCourseDropdown = () => {
     setIsCourseDropdownOpen(!isCourseDropdownOpen);
   };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+      setIsSidebarOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const box = <FontAwesomeIcon icon={faBoxArchive} />;
   const graph = <FontAwesomeIcon icon={faChartSimple} />;
@@ -26,9 +45,33 @@ export default function Sidebar() {
 
   return (
     <>
+      <button
+        type="button"
+        onClick={toggleSidebar}
+        className="inline-flex items-center p-2 mt-2 ms-3 text-sm  rounded-lg sm:hidden focus:outline-none focus:ring-2 bg-gray-800 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+      >
+        <span className="sr-only">Open sidebar</span>
+        <svg
+          className="w-6 h-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+          ></path>
+        </svg>
+      </button>
+
       <aside
         id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        ref={sidebarRef}
+        className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } sm:translate-x-0`}
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-800">
@@ -95,7 +138,11 @@ export default function Sidebar() {
                   <ul className="space-y-2 ps-5">
                     <li>
                       <button
-                        onClick={() => handleNavigation("/course/Communication & Networking Skills")}
+                        onClick={() =>
+                          handleNavigation(
+                            "/course/Communication & Networking Skills"
+                          )
+                        }
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">
@@ -106,7 +153,9 @@ export default function Sidebar() {
                     </li>
                     <li>
                       <button
-                        onClick={() => handleNavigation("/course/Presentation Skills")}
+                        onClick={() =>
+                          handleNavigation("/course/Presentation Skills")
+                        }
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">
@@ -116,7 +165,9 @@ export default function Sidebar() {
                     </li>
                     <li>
                       <button
-                        onClick={() => handleNavigation("/course/Pitching Skills")}
+                        onClick={() =>
+                          handleNavigation("/course/Pitching Skills")
+                        }
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">
@@ -126,7 +177,9 @@ export default function Sidebar() {
                     </li>
                     <li>
                       <button
-                        onClick={() => handleNavigation("/course/Negotation Skills")}
+                        onClick={() =>
+                          handleNavigation("/course/Negotation Skills")
+                        }
                         className="flex items-center w-full p-2 rounded-lg text-white  hover:bg-gray-700 group"
                       >
                         <span className="ms-3 whitespace-nowrap">

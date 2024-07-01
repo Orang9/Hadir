@@ -1,4 +1,3 @@
-import Sidebar from "../../components/Sidebar";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,9 +7,7 @@ export default function Setting() {
   );
   return (
     <>
-      <Sidebar />
-
-      <div className="w-full h-screen bg-[#F5F5F5] ">
+      <div className="w-full h-screen">
         <div className="p-4 sm:ml-64 ">
           <div className="flex justify-between">
             <div className="flex items-center">

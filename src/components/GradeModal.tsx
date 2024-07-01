@@ -15,7 +15,7 @@ export default function GradeModal({ isOpen, onClose, grades }: GradeModalProps)
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-4 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4">Individual Grades</h2>
+        <h2 className="text-2xl font-bold mb-4">Average Individual Grades</h2>
         <ul>
           {grades.map((grade, index) => (
             <li key={index} className="mb-2">
